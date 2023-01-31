@@ -13,13 +13,13 @@ plt.show()
 
 
 # calculate mean squared error manually
-def loss_function(m, b, dataPoints):
+def loss_function(m, b, data_points):
     error_sum = 0
-    for i in range(len(dataPoints)):
-        x = dataPoints.iloc[i].x
-        y = dataPoints.iloc[i].y
+    for i in range(len(data_points)):
+        x = data_points.iloc[i].x
+        y = data_points.iloc[i].y
         error_sum += (y - (m * x + b)) ** 2
-    error_sum / float(len(dataPoints))
+    error_sum / float(len(data_points))
 
 
 def gradient_descent(current_m, current_b, data_points, learning_rate):
@@ -93,7 +93,7 @@ print("Predicted minimum attendance to pass the class: ", minimumAttendanceToPas
 
 # show regression line on plotted data graph
 plt.scatter(data.x, data.y, color="black")
-plt.plot(list(range(0, 50)), [m * x + b for x in range(0, 50)], color="red")
+plt.plot(list(range(0, 25)), [m * x + b for x in range(0, 25)], color="red")
 plt.show()
 
 
