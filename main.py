@@ -93,7 +93,7 @@ print("Predicted minimum attendance to pass the class: ", minimumAttendanceToPas
 
 # show regression line on plotted data graph
 plt.scatter(data.x, data.y, color="black")
-plt.plot(list(range(0, 25)), [m * x + b for x in range(0, 25)], color="red")
+plt.plot(list(range(5, 20)), [m * x + b for x in range(5, 20)], color="red")
 plt.show()
 
 
