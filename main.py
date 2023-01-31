@@ -60,26 +60,33 @@ for i in range(epochs):
     m, b = gradient_descent(m, b, data, learningRate)
 
 # QUESTION 1
+print("\n-----------------QUESTION 1-----------------")
 print("Regression line:")
 print("y = ", m, "* x + ", b)
 print("m: ", m, ", b: ", b)
 
 # QUESTION 2
+print("\n-----------------QUESTION 2-----------------")
 question2result1 = find_y_from_x(m, b, 9)
 question2result2 = find_y_from_x(m, b, 14)
 
 if question2result1 < 40:
-    print("with an attendance of 9, it is unlikely that he/she will pass the course")
+    print("With an attendance of 9, it is unlikely that he/she will "
+          "pass the course. (predicted score = ", question2result1, ")")
 else:
-    print("with an attendance of 9, it is likely that he/she will pass the course")
+    print("With an attendance of 9, it is likely that he/she will "
+          "pass the course. (predicted score = ", question2result1, ")")
 
 if question2result2 < 40:
-    print("with an attendance of 14, it is unlikely that he/she will pass the course")
+    print("With an attendance of 14, it is unlikely that he/she "
+          "will pass the course. (predicted score = ", question2result2, ")")
 else:
-    print("with an attendance of 14, it is likely that he/she will pass the course")
+    print("With an attendance of 14, it is likely that he/she "
+          "will pass the course. (predicted score = ", question2result2, ")")
 
 
 # QUESTION 3
+print("\n-----------------QUESTION 3-----------------")
 minimumAttendanceToPass = find_x_from_y(m, b, 40)
 print("Predicted minimum attendance to pass the class: ", minimumAttendanceToPass)
 
