@@ -40,18 +40,53 @@ def gradient_descent(current_m, current_b, dataPoints, learningRate):
     return m, b
 
 
+def find_y_from_x(m, b, x):
+    return m * x + b
+
+
+def find_x_from_y(m, b, y):
+    return (y - b) / m
+
+
+# Driver code
 m = 0
 b = 0
 learningRate = 0.0001
-epochs = 500
+epochs = 1000
 
 for i in range(epochs):
     if i % 50 == 0:
         print(f"Epoch: {i}")
     m, b = gradient_descent(m, b, data, learningRate)
 
+# QUESTION 1
+print("Regression line:")
+print("y = ", m, "* x + ", b)
 print("m: ", m, ", b: ", b)
 
+# QUESTION 2
+question2result1 = find_y_from_x(m, b, 9)
+question2result2 = find_y_from_x(m, b, 14)
+
+if question2result1 < 40:
+    print("with an attendance of 9, it is unlikely that he/she will pass the course")
+else:
+    print("with an attendance of 9, it is likely that he/she will pass the course")
+
+if question2result2 < 40:
+    print("with an attendance of 14, it is unlikely that he/she will pass the course")
+else:
+    print("with an attendance of 14, it is likely that he/she will pass the course")
+
+
+# QUESTION 3
+minimumAttendanceToPass = find_x_from_y(m, b, 40)
+print("Predicted minimum attendance to pass the class: ", minimumAttendanceToPass)
+
+
+# show regression line on plotted data graph
 plt.scatter(data.x, data.y, color="black")
 plt.plot(list(range(0, 50)), [m * x + b for x in range(0, 50)], color="red")
 plt.show()
+
+
