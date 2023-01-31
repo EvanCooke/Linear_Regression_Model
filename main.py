@@ -22,21 +22,21 @@ def loss_function(m, b, dataPoints):
     error_sum / float(len(dataPoints))
 
 
-def gradient_descent(current_m, current_b, dataPoints, learningRate):
+def gradient_descent(current_m, current_b, data_points, learning_rate):
     m_gradient = 0
     b_gradient = 0
 
-    n = len(dataPoints)
+    n = len(data_points)
 
     for i in range(n):
-        x = dataPoints.iloc[i].x
-        y = dataPoints.iloc[i].y
+        x = data_points.iloc[i].x
+        y = data_points.iloc[i].y
 
         m_gradient += -(2 / n) * x * (y - (current_m * x + current_b))
         b_gradient += -(2 / n) * (y - (current_m * x + current_b))
 
-    m = current_m - m_gradient * learningRate
-    b = current_b - b_gradient * learningRate
+    m = current_m - m_gradient * learning_rate
+    b = current_b - b_gradient * learning_rate
     return m, b
 
 
@@ -51,13 +51,13 @@ def find_x_from_y(m, b, y):
 # Driver code
 m = 0
 b = 0
-learningRate = 0.0001
+learning_rate = 0.0001
 epochs = 1000
 
 for i in range(epochs):
     if i % 50 == 0:
         print(f"Epoch: {i}")
-    m, b = gradient_descent(m, b, data, learningRate)
+    m, b = gradient_descent(m, b, data, learning_rate)
 
 # QUESTION 1
 print("\n-----------------QUESTION 1-----------------")
